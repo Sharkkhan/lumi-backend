@@ -9,7 +9,7 @@ app = FastAPI(title="Lumi Backend")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Later replace * with your Base44 domain
+    allow_origins=["*"],  # later restrict to your frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -17,7 +17,7 @@ app.add_middleware(
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-@app.get("/api/health")
+@app.get("/health")
 def health():
     return {"ok": True, "message": "Lumi backend running"}
 
