@@ -33,3 +33,5 @@ async def analyze_voice(file: UploadFile = File(...)):
         data=data
     )
     return {"transcript": r.text}
+
+“Fix /health endpoint”
